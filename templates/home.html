@@ -1,0 +1,73 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Local Yards{% endblock %}
+{% block content %}
+
+    <h1>Yard-mate!</h1>
+    <div v-if='hide_list === false'>
+
+    <div class="searches">
+        <div>
+            <h4>Makes</h4>
+            <select class='make' v-model='make'>
+                <option v-for='make in makes' :value='make'>[[make.name]]</option>
+            </select>
+        </div>
+        <div>
+            <h4 class='models'>Models</h4>
+            <select v-model='model' class='model '>
+                <option v-for="model in valid_models" :value="model" >[[model.name]]</option>
+            </select>
+        </div>
+        <button @click='get_cars'>Search</button>
+    </div>
+    <br>
+<!-- <div class="box"> <a class="button" href="#popup1">Let me Pop up</a> </div>
+<div id="popup1" class="overlay" > <div class="popup" > <h2 > Here i am</h2 > <a class="close" href="#" > &times;</a> <div class="content"> Thank to pop me out of that button, but now i'm done so you can close this window. </div> </div> -->
+
+<!-- <button-counter car='car' ></button-counter> -->
+
+
+
+
+    <div v-for='location in results'>
+
+        <h2>[[location.name]]</h2>
+        <div class='cars'>
+
+<div v-for='vehicle in location.vehicles' class='car' >
+
+                <img :src="vehicle.largeImage">
+                <div class="car-details">
+                    <h5 class='vin'>[[vehicle.vin]]</h5>
+
+                    <h4>[[vehicle.year]] - [[vehicle.make]] - [[vehicle.model]]</h4>
+<p>row: [[vehicle.row]] || [[date_splitter(vehicle.dateAdded)]]</p>
+
+                </div>
+                
+            </div>
+
+        </div>
+<br>
+    </div>
+
+    <div v-if='results === false'>
+        <h2>Sorry, no results for [[make]], [[model]], within [[distance]] miles of [[postal]]</h2>
+    </div>
+</div>
+<!-- end first if -->
+<div v-elif='hide_list === true'>
+
+<button-counter ></button-counter>
+
+
+</div>
+<!-- end v-elif -->
+<div v-else>
+
+</div>
+{% endblock %}
+
+
