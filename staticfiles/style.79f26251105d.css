@@ -1,0 +1,180 @@
+/* 
+Storm: #0c2431 | Teal: #194a50 | Sunburst: #d37556 | Sand: #d8a28c | Cloud: #e1dad2
+*/
+
+html{
+    /* width: 100vw !important; */
+    overflow-x: hidden;
+}
+body {
+background-color: #e1dad2b1;
+
+
+    font-family: 'Fira Sans', sans-serif;
+color: #194a50;
+
+
+}
+.drop-shadow {
+box-shadow: 5px 5px 5px #0c2431;
+}
+*{
+    text-align: center;
+}
+
+.cars {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* gap: 10px; */
+    /* grid-auto-rows: minmax(100px, auto); */
+
+}
+
+.cars div {
+    align-self: center;
+}
+
+.cars img {
+    max-width: 100%;
+}
+
+.searches{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.searches h4{
+}
+
+.searches select{
+}
+
+.searches button{
+    grid-row-end: 5;
+    width: 10rem;
+    border-radius: 20px;
+    margin-top: 2rem;
+    place-self: center;
+    background-color: #d8a28c;
+    grid-column-end: -1;
+    grid-column-start: -3;
+
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+button:active {
+    box-shadow: inset 0 3px 4px hsla(0, 0%, 0%, 0.2);
+}
+
+button:focus {
+    outline: thin dotted #444;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+.car-details{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1rem 1rem .1.5rem;
+    font-size: .8rem;
+}
+.car-details h5{
+grid-column-end: 1;
+margin: .1rem;
+
+
+grid-column-start: 3;
+}
+
+.car-details h4{
+    margin: .1rem;
+grid-column-end: 1;
+grid-column-start: 3;
+
+}
+.car-details p {
+    grid-column-end: -1;
+    grid-column-start: -3;
+    margin: .1rem;
+}
+.vin {
+margin: .1rem;
+
+
+    font-size: 1rem;
+}
+
+
+@media(orientation: landscape) {
+    .cars{
+        grid-template-columns: repeat(6, 1fr);
+
+    }
+
+}
+
+
+
+
+/* modal */
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+.popup .close:hover {
+    color: #06D85F;
+}
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+@media screen and(max-width: 700px) {
+    .box {
+        width: 70%;
+    }
+    .popup {
+        width: 70%;
+    }
+}
