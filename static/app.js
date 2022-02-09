@@ -36,7 +36,7 @@ let app = new Vue({
 
             axios({
             method: 'get',
-            url: `http://localhost:8000/scraper/results/${app.make.id}/${app.model.id}/${app.distance}/${app.postal}/`,
+            url: `/scraper/results/${app.make.id}/${app.model.id}/${app.distance}/${app.postal}/`,
             })
             .then(function (response) {
                 app.results = response.data.locations
@@ -47,7 +47,7 @@ let app = new Vue({
 
             axios({
             method: 'get',
-            url: `http://localhost:8000/scraper/makes/`,
+            url: `/scraper/makes/`,
             })
             .then(function (response) {
                 app.makes = response.data.makes
@@ -59,7 +59,7 @@ let app = new Vue({
 
             axios({
             method: 'get',
-            url: `http://localhost:8000/scraper/models/`,
+            url: `/scraper/models/`,
             })
             .then(function (response) {
                 app.models = response.data.models
