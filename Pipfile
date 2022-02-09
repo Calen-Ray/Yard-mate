@@ -8,7 +8,7 @@ requests = "*"
 djangorestframework = "*"
 django-filter = "*"
 gunicorn = "*"
-
+django-heroku = "*"
 
 [dev-packages]
 
