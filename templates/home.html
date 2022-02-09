@@ -20,6 +20,8 @@
                 <option v-for="model in valid_models" :value="model" >[[model.name]]</option>
             </select>
         </div>
+        <input v-model='postal' type="number">
+        <input v-model='distance' type="number">
         <button @click='get_cars'>Search</button>
     </div>
     <br>
