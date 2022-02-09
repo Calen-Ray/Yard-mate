@@ -64,6 +64,7 @@ box-shadow: 5px 5px 5px #0c2431;
 
 .searches input {
     width: fit-content;
+    place-self: center;
 }
 
 button:hover {
